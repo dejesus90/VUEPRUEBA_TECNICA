@@ -1,21 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+// import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  // {
-  //   path: '/',
-  //   name: 'Home',
-  //   component: Home
-  // },
   {
     path: '/',
-    name: 'CRUD',
-    component: () => import('../components/CRUD'),
-    meta: { transition: 'zoom' },
-  }
+    name: 'Home',
+    component: () => import('../components/test'),
+  },
+  
 ]
 
 const router = new VueRouter({
