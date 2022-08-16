@@ -34,6 +34,7 @@
             label="Numero Inicial"
             outlined
             type="number"
+            v-model="numeroItem"
             min="1"
           ></v-text-field>
         </v-col>
@@ -45,7 +46,7 @@
             depressed
             color="primary"
             style="background:#ddd"
-            v-model="numeroItem"
+            
             @click="calcularModulo()"
             >
             Enviar
@@ -103,7 +104,7 @@
     methods: {
         async calcularModulo(){
             await axios
-            .get(API_URL+'numeroItem', {numero:4})
+            .post(API_URL+'numeroItem', {numero:this.numeroItem})
             .then(res => {
                 console.log({res});
                 this.items = res.data.resultado
